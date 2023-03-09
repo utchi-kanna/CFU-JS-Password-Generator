@@ -4,10 +4,10 @@ function charLength() {
   let charLength = document.getElementById("length").value;
   document.getElementById("result").innerHTML = charLength;
   
-    const upper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+   const upper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
   const lower = ["abcdefghijklmnopqrstuvwxyz"];
-  const number = ["0123456789"];
-  const symbol = ["!@#$%^&*()_+{}|:>?<~[];'./"];
+  const number = ["1234567890"];
+  const symbol = [">?<~[];'./!@#$%^&*()_+{}|:"];
   
   let upperCase = document.getElementById("uppercase").checked;
   let lowerCase = document.getElementById("lowercase").checked;
@@ -17,17 +17,21 @@ function charLength() {
 
   let final = "";
   for (let i = 0; i < charLength; i++) {
-    if (upperCase) {
-      final += upper[0].charAt(Math.floor(Math.random() * 10));
+    if (upperCase == true) {
+      let ran = Math.random() * 10;
+      final += upper[0].charAt(Math.ceil(ran));
     }
-    if (lowerCase) {
-      final += lower[0].charAt(Math.floor(Math.random() * 10));
+    if (lowerCase == true) {
+      let ran = Math.random() * 10;
+      final += lower[0].charAt(Math.ceil(ran));
     }
-    if (numbers) {
-      final += number[0].charAt(Math.floor(Math.random() * 10));
+    if (numbers == true) {
+      let ran = Math.random() * 10;
+      final += number[0].charAt(Math.ceil(ran));
     }
-    if (symbols) {
-      final += symbol[0].charAt(Math.floor(Math.random() * 10));
+    if (symbols == true) {
+      let ran = Math.random() * 10;
+      final += symbol[0].charAt(Math.ceil(ran));
     }
   }
   const output = final.slice(0, charLength);
@@ -37,3 +41,5 @@ function charLength() {
 charLength();
 document.getElementById("length").addEventListener("input", charLength);
 document.getElementById("btn").addEventListener("click", charLength);
+
+
