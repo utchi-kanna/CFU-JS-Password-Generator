@@ -1,17 +1,19 @@
 /*get the number of characters*/
 function charLength() {
+  
+  let charLength = document.getElementById("length").value;
+  document.getElementById("result").innerHTML = charLength;
+  
+    const upper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+  const lower = ["abcdefghijklmnopqrstuvwxyz"];
+  const number = ["0123456789"];
+  const symbol = ["!@#$%^&*()_+{}|:>?<~[];'./"];
+  
   let upperCase = document.getElementById("uppercase").checked;
   let lowerCase = document.getElementById("lowercase").checked;
   let numbers = document.getElementById("numbers").checked;
   let symbols = document.getElementById("symbols").checked;
 
-  const upper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-  const lower = ["abcdefghijklmnopqrstuvwxyz"];
-  const number = ["0123456789"];
-  const symbol = ["!@#$%^&*()_+{}|:>?<~[];'./"];
-
-  let charLength = document.getElementById("length").value;
-  document.getElementById("result").innerHTML = charLength;
 
   let final = "";
   for (let i = 0; i < charLength; i++) {
